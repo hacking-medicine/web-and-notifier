@@ -1,5 +1,77 @@
-<p><B>bps</B>: {{current.heart_rate}} bpm</p>
-<p><B>p wave</B>: {{current.p_wave}} seg</p>
-<p><B>pr interval</B>: {{current.pr}} seg</p>
-<p><B>qrs complex</B>: {{current.qrs}} seg</p>
-<p><B>qt interval</B>: {{current.qt}} seg</p>
+<h2 id="current">
+	Current status
+</h2>
+
+<table id="data"> 
+	<tr> 
+		<td colspan="2" rowspan="2" class="big"> 
+			{{current.heart_rate}} <br/> <B>bpm</B> 
+		</td>
+		<td> 
+			 {{current.p_wave}} s<br/> <B>p wave</B> 
+		</td>
+		<td> 
+			 {{current.pr}} s<br/> <B>pr interval</B> 
+		</td>
+	</tr>
+	<tr>
+		<td> 
+			 {{current.qrs}} s<br/> <B>qrs complex</B> 
+		</td>
+		<td> 
+			 {{current.qt}} s<br/> <B>qt interval</B> 
+		</td>
+	</tr>
+</table>
+
+<a href="#/patient" class="btn btn-danger" id="doctor">
+	Contact doctor
+</a>
+
+<table id="info">
+	<td>
+		<a href="#/patient" class="btn btn-primary">
+			Add note
+		</a>
+	</td>
+	<td>
+		<h4>
+			<span class="label label-default">
+				<i class="fa fa-circle" id="record"></i> Recording
+			</span>
+		</h4>
+		<h4>
+			<span class="label label-success">
+				<i class="fa fa-check"></i> Online
+			</span>
+		</h4>
+	</td>
+
+</table>
+
+<style type="text/css">
+	#data{
+		border:1px solid black;
+		margin: 10px;
+	}
+	td{
+		padding: 20px;
+		text-align: center;
+	}
+	.big{
+		font-size: 2em;
+	}
+	#doctor{
+		margin-left: 119px;
+	}
+	#current{
+		margin-left: 80px;
+	}
+	#info{
+		margin: 10px;	
+		margin-left: 60px
+	}
+	#record{
+		color: red;
+	}
+</style>

@@ -44,11 +44,11 @@ var gaussRandom = function() {
 
 			var updateTick = function(){
 
-				current.heart_rate = Math.round(createMemberInNormalDistribution(90, 10));
-				current.p_wave = Math.round((createMemberInNormalDistribution(0.09, 0.02))*100)/100;
-				current.pr = Math.round((createMemberInNormalDistribution(0.16, 0.04))*100)/100;
-				current.qrs = Math.round((createMemberInNormalDistribution(0.08, 0.02))*100)/100;
-				current.qt = Math.round((createMemberInNormalDistribution(0.4, 0.1))*100)/100;
+				current.heart_rate = Math.round(createMemberInNormalDistribution(90, 2));
+				current.p_wave = Math.round((createMemberInNormalDistribution(0.09, 0.01))*100)/100;
+				current.pr = Math.round((createMemberInNormalDistribution(0.16, 0.03))*100)/100;
+				current.qrs = Math.round((createMemberInNormalDistribution(0.08, 0.01))*100)/100;
+				current.qt = Math.round((createMemberInNormalDistribution(0.4, 0.05))*100)/100;
 
 				var params = [{p: 'bpm', v:current.heart_rate},{p: 'p wave', v:current.p_wave}, {p: 'pr interval', v:current.pr}, {p: 'qrs complex', v:current.qrs}, {p: 'qt interval', v:current.qt}];
 
@@ -64,13 +64,13 @@ var gaussRandom = function() {
 				};
 			}
 
-			current.heart_rate = 80;
+			current.heart_rate = 90;
 			current.p_wave = 0.08;
 			current.pr = 0.15;
 			current.qrs = 0.09;
 			current.qt = 0.4;
 
-			$interval(updateTick, 1000);
+			$interval(updateTick, 2000);
 
 		}
 	]);

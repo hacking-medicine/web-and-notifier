@@ -1,1 +1,79 @@
-DOCTOR
+<h2 class="current">
+	Patients
+</h2>
+
+<ul id="patients">
+	<li ng-repeat="patient in patients">
+		<a ng-click="current.patient=patient">
+			{{patient.name}} {{patient.surname}}
+		</a>
+	</li>
+</ul>
+
+<div>
+	<h5 class="current">
+		<B>Patient:</B> {{current.patient.name}} {{current.patient.surname}}
+	</h5>
+
+	<table id="data"> 
+		<tr> 
+			<td colspan="2" rowspan="2" class="big"> 
+				{{current.patient.bpm[0]}} <br/> <B>bpm</B> 
+			</td>
+			<td> 
+				 {{current.patient.pw[0]}} s<br/> <B>p wave</B> 
+			</td>
+			<td> 
+				 {{current.patient.pr[0]}} s<br/> <B>pr interval</B> 
+			</td>
+		</tr>
+		<tr>
+			<td> 
+				 {{current.patient.qrs[0]}} s<br/> <B>qrs complex</B> 
+			</td>
+			<td> 
+				 {{current.patient.qt[0]}} s<br/> <B>qt interval</B> 
+			</td>
+		</tr>
+	</table>
+
+	<table>
+		<tr ng-repeat="n in [] | range:current.patient.qrs.lenght">
+			<td>
+				<B>bpm</B>: {{current.patient.bpm[n]}} 
+			</td>
+			<td>
+				<B>p wave</B>: {{current.patient.pw[n]}} 
+			</td>
+			<td>
+				<B>pr interval</B>: {{current.patient.pr[n]}} 
+			</td>
+			<td>
+				<B>qrs complex</B>: {{current.patient.qrs[n]}} 
+			</td>
+			<td>
+				<B>qt interval</B>: {{current.patient.qt[n]}} 
+			</td>
+		</tr>
+	</table>	
+
+</div>
+
+<style type="text/css">
+	.current{
+		margin-left: 80px;
+	}
+	#patients{
+		border: 1px solid black;
+		width: 305px;
+		margin-left: 20px
+	}
+	#data{
+		border:1px solid black;
+		margin: 20px;
+	}
+	td{
+		padding: 20px;
+		text-align: center;
+	}
+</style>
