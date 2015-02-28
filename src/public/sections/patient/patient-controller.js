@@ -4,7 +4,7 @@
 /*
  * Returns member of set with a given mean and standard deviation
  * mean: mean
- * standard deviation: std_dev 
+ * standard deviation: std_dev
  */
 var createMemberInNormalDistribution = function(mean,std_dev){
     return mean + (gaussRandom()*std_dev);
@@ -24,7 +24,7 @@ var gaussRandom = function() {
     var c = Math.sqrt(-2*Math.log(r)/r);
     return u*c;
 
-    /* todo: optimize this algorithm by caching (v*c) 
+    /* todo: optimize this algorithm by caching (v*c)
      * and returning next time gaussRandom() is called.
      * left out for simplicity */
 }
@@ -41,10 +41,11 @@ var gaussRandom = function() {
 		function($scope, $interval, $http){
 
 			var current = $scope.current = {};
+			$scope.bpmAverage = 90;
 
 			var updateTick = function(){
 
-				current.heart_rate = Math.round(createMemberInNormalDistribution(90, 2));
+				current.heart_rate = Math.round(createMemberInNormalDistribution($scope.bpmAverage, 2));
 				current.p_wave = Math.round((createMemberInNormalDistribution(0.09, 0.01))*100)/100;
 				current.pr = Math.round((createMemberInNormalDistribution(0.16, 0.03))*100)/100;
 				current.qrs = Math.round((createMemberInNormalDistribution(0.08, 0.01))*100)/100;
@@ -71,6 +72,10 @@ var gaussRandom = function() {
 			current.qt = 0.4;
 
 			$interval(updateTick, 2000);
+
+			$scope.switchBpm = function() {
+				$scope.bpmAverage = 250;
+			};
 
 		}
 	]);

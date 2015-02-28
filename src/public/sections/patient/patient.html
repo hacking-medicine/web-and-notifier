@@ -2,30 +2,33 @@
 	Current status
 </h2>
 
-<table id="data"> 
-	<tr> 
-		<td colspan="2" rowspan="2" class="big"> 
-			{{current.heart_rate}} <br/> <B>bpm</B> 
+<table id="data">
+	<tr>
+		<td colspan="2" rowspan="2" class="big">
+			{{current.heart_rate}} <br/> <B>bpm</B>
 		</td>
-		<td> 
-			 {{current.p_wave}} s<br/> <B>p wave</B> 
+		<td>
+			 {{current.p_wave}} s<br/> <B>p wave</B>
 		</td>
-		<td> 
-			 {{current.pr}} s<br/> <B>pr interval</B> 
+		<td>
+			 {{current.pr}} s<br/> <B>pr interval</B>
 		</td>
 	</tr>
 	<tr>
-		<td> 
-			 {{current.qrs}} s<br/> <B>qrs complex</B> 
+		<td>
+			 {{current.qrs}} s<br/> <B>qrs complex</B>
 		</td>
-		<td> 
-			 {{current.qt}} s<br/> <B>qt interval</B> 
+		<td>
+			 {{current.qt}} s<br/> <B>qt interval</B>
 		</td>
 	</tr>
 </table>
 
 <a href="#/patient" class="btn btn-danger" id="doctor">
 	Contact doctor
+</a>
+<a href="#/patient" class="btn btn-danger" id="kill" ng-click="switchBpm()">
+	KILL
 </a>
 
 <table id="info">
@@ -68,7 +71,7 @@
 		margin-left: 80px;
 	}
 	#info{
-		margin: 10px;	
+		margin: 10px;
 		margin-left: 60px
 	}
 	#record{

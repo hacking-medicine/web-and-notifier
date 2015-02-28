@@ -34,8 +34,21 @@ app.post('/', function(req, res){
 	res.send('correct');
 });
 
+notified = false
+
+app.get('/notifyreset', function(req, res) {
+	notified = false;
+	res.send(' :(');
+});
+
 app.post('/notify',function(req,res){
-	sockets.subscribers.alert();
+	if (req.body.length > 0 && !notified)
+	{
+		sockets.subscribers.alert();
+		notified = true;
+	}
+
+	res.send(' :)');
 });
 
 
