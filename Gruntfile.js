@@ -107,7 +107,7 @@ module.exports = function (grunt) {
 				files: [
 					{
 						expand: true,
-						cwd: '<%= config.app %>/_lib/fontawesome',
+						cwd: '<%= config.app %>/_lib/font-awesome',
 						src: 'fonts/*',
 						dest: '<%= config.app %>/lib'
 					}
