@@ -2,6 +2,16 @@
 
 	var module = angular.module('doctor-controller',[]);
 
+	module.filter('range', function() {
+ 		return function(input, total) {
+ 		total = parseInt(total);
+ 		total = 3;
+ 		for (var i=0; i<total; i++)
+ 			input.push(i);
+ 		return input;
+ 		};
+ 	});
+
 	module.controller('DoctorController',[
 		'$scope',
 		function($scope){

@@ -37,6 +37,26 @@
 		</tr>
 	</table>
 
+	<table>
+		<tr ng-repeat="n in [] | range:current.patient.qrs.lenght">
+			<td>
+				<B>bpm</B>: {{current.patient.bpm[n]}} 
+			</td>
+			<td>
+				<B>p wave</B>: {{current.patient.pw[n]}} 
+			</td>
+			<td>
+				<B>pr interval</B>: {{current.patient.pr[n]}} 
+			</td>
+			<td>
+				<B>qrs complex</B>: {{current.patient.qrs[n]}} 
+			</td>
+			<td>
+				<B>qt interval</B>: {{current.patient.qt[n]}} 
+			</td>
+		</tr>
+	</table>	
+
 </div>
 
 <style type="text/css">
