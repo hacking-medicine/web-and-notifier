@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" ng-app="heart-monitor">
+  <head>
+    <title>CA alert system</title>
+    <meta charset="utf-8"/> 
+    <!--<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />-->
+    
+    <!-- fileblock:css app-css -->
+    <link href="/lib/css/lib.min.css" rel="stylesheet" />
+    <!-- endfileblock -->
+
+    <!-- fileblock:js app-js -->
+    <script src="/lib/js/lib.min.js"></script>
+    <script src="/heart-controller.js"></script>
+    <script src="/heart.js"></script>
+    <script src="/sections/doctor/doctor-controller.js"></script>
+    <script src="/sections/patient/patient-controller.js"></script>
+    <!-- endfileblock -->
+    <!--<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>-->
+    
+  </head>
+  <body ng-controller="HeartController">
+  	<ng-view></ng-view>
+  </body>
+</html>
