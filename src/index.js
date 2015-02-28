@@ -34,6 +34,10 @@ app.post('/', function(req, res){
 	res.send('correct');
 });
 
+app.post('/notify',function(req,res){
+	sockets.subscribers.alert();
+});
+
 
 io.sockets.on('connection', sockets.socket);
 
