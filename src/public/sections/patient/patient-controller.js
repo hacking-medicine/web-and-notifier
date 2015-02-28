@@ -42,7 +42,7 @@ var gaussRandom = function() {
 
 			var current = $scope.current = {};
 			$scope.bpmAverage = 90;
-
+			var host = window.location.hostname;
 			var updateTick = function(){
 
 				current.heart_rate = Math.round(createMemberInNormalDistribution($scope.bpmAverage, 2));
@@ -61,7 +61,7 @@ var gaussRandom = function() {
 						param: params[i].p,
 						value: params[i].v
 					}
-					$http.post('http://localhost:8080/monitor',{user_id: 1, measurements:[measurement]})
+					$http.post('http://' + host + ':8080/monitor',{user_id: 1, measurements:[measurement]})
 				};
 			}
 
@@ -72,6 +72,8 @@ var gaussRandom = function() {
 			current.qt = 0.4;
 
 			$interval(updateTick, 2000);
+
+			$http.get('http://' + host + ':3001/notifyreset');
 
 			$scope.switchBpm = function() {
 				$scope.bpmAverage = 250;
